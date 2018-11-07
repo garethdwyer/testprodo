@@ -1,3 +1,5 @@
+## WHY WOULD YOU EVEN CODE LIKE THIS???
+
 from numpy import *
 
 n= int (input("Enter a positive odd integer"))
@@ -10,11 +12,12 @@ row= 0
 col= m
 a[row, col]= 1
 count= 2
+
 while count<= n*n:
 
     if (row-1 >= 0) and (col+1<= n-1) and (a[row-1, col+1]!= 0):    #if existing element
-        row+= 1
-        a[row, col]= count
+        row += 1
+        a[row, col] = count
 
     elif (row-1 >= 0) and (col+1<= n-1) and (a[row-1, col+1]== 0):  # fill diagonally
         while row-1 >= 0 and col+1<= n-1 and a[row-1, col+1]== 0:

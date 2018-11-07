@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+    <script>    
+    function addNumberToView(number) {
+            document.form.calculatorView.value =
+                document.form.calculatorView.value + number;
+        }
+
+        function calculate() {
+            if (document.form.calculatorView.value != "") {
+                document.form.calculatorView.value = eval(
+                    document.form.calculatorView.value
+                );
+            } else {
+            }
+        }
+
+        function wipeField() {
+            document.form.calculatorView.value = "";
+        }
+    </script>
+    <style>
+.calcButton {
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  border-radius: 0px;
+  border: solid;
+  border-width: 1px;
+  background-color: #dee5e5;
+}
+.calculatorView {
+  width: 168px;
+  margin: 5px;
+  font-size: 25px;
+}
+.main {
+  margin: 0px;
+  padding: 10x;
+}
+.equalsButton {
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  border-radius: 0px;
+  border: solid;
+  background-color: #19535f;
+  border-width: 1px;
+}
+
+.clearButton {
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  border-radius: 0px;
+  border: solid;
+  background-color: #17bebb;
+  border-width: 1px;
+}
+
+    </style>
+</head>
+
+<body>
+
+
+    <div class="main" align="center">
+
+        <form name="form">
+
+            <input class="calculatorView" name="calculatorView">
+
+        </form>
+
+        <table>
+
+            <tr>
+                <td><input class="calcButton" type="button" value="X" onclick="addNumberToView('*')"></td>
+                <td><input class="calcButton" type="button" value="/" onclick="addNumberToView(value)"></td>
+                <td><input class="calcButton" type="button" value="+" onclick="addNumberToView(value)"></td>
+                <td><input class="calcButton" type="button" value="-" onclick="addNumberToView(value)"></td>
+            </tr>
+            <tr>
+                <td><input class="calcButton" type="button" value="7" onclick="addNumberToView(value)"></td>
+                <td><input class="calcButton" type="button" value="8" onclick="addNumberToView(value)"></td>
+                <td><input class="calcButton" type="button" value="9" onclick="addNumberToView(value)"></td>
+                <td rowspan=2><input class="clearButton" type="button" style="height: 84px" value="C" onclick="wipeField()"></td>
+
+            </tr>
+            <tr>
+                <td><input class="calcButton" type="button" value="4" onclick="addNumberToView(value)"></td>
+                <td><input class="calcButton" type="button" value="5" onclick="addNumberToView(value)"></td>
+                <td><input class="calcButton" type="button" value="6" onclick="addNumberToView(value)"></td>
+
+            </tr>
+            <tr>
+                <td><input class="calcButton" type="button" value="1" onclick="addNumberToView(value)"></td>
+                <td><input class="calcButton" type="button" value="2" onclick="addNumberToView(value)"></td>
+                <td><input class="calcButton" type="button" value="3" onclick="addNumberToView(value)"></td>
+                <td rowspan=2><input class="equalsButton" type="button" value="=" style="height: 84px" onclick="calculate(value)"></td>
+            </tr>
+            <tr>
+                <td colspan=2><input class="calcButton" type="button" value="0" style="width: 84px" onclick="addNumberToView(value)"></td>
+                <td ><input class="calcButton" type="button"  value="." onclick="addNumberToView('.')"></td>
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+
+</html>
